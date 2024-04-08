@@ -1,6 +1,6 @@
 module github.com/AlexiaChen/utils
 
-go 1.21.8
+go 1.20
 
 require github.com/gogf/gf/v2 v2.6.4
 
