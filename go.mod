@@ -1,4 +1,4 @@
-module gitlab.landui.cn/gomod/utils
+module github.com/AlexiaChen/utils
 
 go 1.21.8
 
