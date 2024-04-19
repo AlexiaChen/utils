@@ -117,9 +117,12 @@ func IsValidIP(ip string) bool {
 }
 
 // IsValidCIDRIP CIDRI验证 ip 是否合法
-func IsValidCIDRIP(ip string) error {
+func IsValidCIDRIP(ip string) bool {
 	_, _, err := net.ParseCIDR(ip)
-	return err
+	if err != nil {
+		return false
+	}
+	return true
 }
 
 // ValidateIpList 验证IP列表是否合法
@@ -143,7 +146,7 @@ func ValidateCIDRIIpList(ipList string) bool {
 	}
 	ips := strings.Split(ipList, "\n")
 	for _, ip := range ips {
-		if strings.TrimSpace(ip) != "" && !IsValidIP(strings.TrimSpace(ip)) {
+		if strings.TrimSpace(ip) != "" && !IsValidCIDRIP(strings.TrimSpace(ip)) {
 			return false
 		}
 	}
