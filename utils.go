@@ -115,6 +115,8 @@ func ToMap(data interface{}) (map[string]interface{}, error) {
 func IsValidIP(ip string) bool {
 	return net.ParseIP(ip) != nil
 }
+
+// IsValidCIDRIP CIDRI验证 ip 是否合法
 func IsValidCIDRIP(ip string) error {
 	_, _, err := net.ParseCIDR(ip)
 	return err
@@ -122,6 +124,20 @@ func IsValidCIDRIP(ip string) error {
 
 // ValidateIpList 验证IP列表是否合法
 func ValidateIpList(ipList string) bool {
+	if strings.TrimSpace(ipList) == "" {
+		return false
+	}
+	ips := strings.Split(ipList, "\n")
+	for _, ip := range ips {
+		if strings.TrimSpace(ip) != "" && !IsValidIP(strings.TrimSpace(ip)) {
+			return false
+		}
+	}
+	return true
+}
+
+// ValidateCIDRIIpList ValidateIpList CIDRI验证IP列表是否合法
+func ValidateCIDRIIpList(ipList string) bool {
 	if strings.TrimSpace(ipList) == "" {
 		return false
 	}
