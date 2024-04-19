@@ -118,11 +118,14 @@ func IsValidIP(ip string) bool {
 
 // IsValidCIDRIP CIDRI验证 ip 是否合法
 func IsValidCIDRIP(ip string) bool {
-	_, _, err := net.ParseCIDR(ip)
-	if err != nil {
+	if IsValidIP(ip) {
 		return true
 	}
-	return false
+	_, _, err := net.ParseCIDR(ip)
+	if err != nil {
+		return false
+	}
+	return true
 }
 
 // ValidateIpList 验证IP列表是否合法
