@@ -115,6 +115,10 @@ func ToMap(data interface{}) (map[string]interface{}, error) {
 func IsValidIP(ip string) bool {
 	return net.ParseIP(ip) != nil
 }
+func IsValidCIDRIP(ip string) error {
+	_, _, err := net.ParseCIDR(ip)
+	return err
+}
 
 // ValidateIpList 验证IP列表是否合法
 func ValidateIpList(ipList string) bool {
