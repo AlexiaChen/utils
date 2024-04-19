@@ -120,9 +120,9 @@ func IsValidIP(ip string) bool {
 func IsValidCIDRIP(ip string) bool {
 	_, _, err := net.ParseCIDR(ip)
 	if err != nil {
-		return false
+		return true
 	}
-	return true
+	return false
 }
 
 // ValidateIpList 验证IP列表是否合法
