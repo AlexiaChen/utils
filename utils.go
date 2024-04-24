@@ -29,6 +29,15 @@ func GetConfig(confPath string, key string) *g.Var {
 	}
 	return val
 }
+func GetConfigs(key string) *g.Var {
+	var ctx = gctx.New()
+	val, err := g.Cfg().Get(ctx, key)
+	if err != nil {
+		fmt.Println("读取配置失败", err.Error())
+		return nil
+	}
+	return val
+}
 
 // StringToFloat64 string转float64
 func StringToFloat64(str string) float64 {
