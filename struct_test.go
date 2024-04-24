@@ -54,3 +54,15 @@ func TestCopyStructUsingJSON(t *testing.T) {
 	}
 	fmt.Printf("%v", b)
 }
+
+func TestIPv4InSubnet(t *testing.T) {
+	ipAddress := "192.168.1.10"
+	subnetCIDR := "192.168.1.0/24"
+
+	isInSubnet := IPv4InSubnet(ipAddress, subnetCIDR)
+	if !isInSubnet {
+		fmt.Println("Error checking subnet membership:")
+	} else {
+		fmt.Printf("IP address %s is %t in subnet %s\n", ipAddress, isInSubnet, subnetCIDR)
+	}
+}
