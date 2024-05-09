@@ -2,7 +2,7 @@ package utils
 
 import (
 	"github.com/go-playground/validator/v10"
-	"gitlab.landui.cn/gomod/global"
+	"github.com/AlexiaChen/global"
 )
 
 func ParameterValidations(req interface{}) validator.FieldError {

@@ -3,12 +3,13 @@ module github.com/AlexiaChen/utils
 go 1.20
 
 require (
-	github.com/go-playground/validator/v10 v10.19.0
-	github.com/gogf/gf/v2 v2.6.4
-	gitlab.landui.cn/gomod/global v0.0.6
+	github.com/AlexiaChen/global v0.0.0-20240415075333-5be941f6a6cb
+	github.com/go-playground/validator/v10 v10.20.0
+	github.com/gogf/gf/v2 v2.7.0
 )
 
 require (
+	github.com/AlexiaChen/database v0.0.0-20240408075750-246b4d593076 // indirect
 	github.com/BurntSushi/toml v1.2.0 // indirect
 	github.com/cespare/xxhash/v2 v2.1.2 // indirect
 	github.com/clbanning/mxj/v2 v2.7.0 // indirect
@@ -16,7 +17,7 @@ require (
 	github.com/fatih/color v1.15.0 // indirect
 	github.com/fsnotify/fsnotify v1.7.0 // indirect
 	github.com/gabriel-vasile/mimetype v1.4.3 // indirect
-	github.com/go-logr/logr v1.2.4 // indirect
+	github.com/go-logr/logr v1.2.3 // indirect
 	github.com/go-logr/stdr v1.2.2 // indirect
 	github.com/go-playground/locales v0.14.1 // indirect
 	github.com/go-playground/universal-translator v0.18.1 // indirect
@@ -29,11 +30,9 @@ require (
 	github.com/leodido/go-urn v1.4.0 // indirect
 	github.com/magiconair/properties v1.8.6 // indirect
 	github.com/mattn/go-colorable v0.1.13 // indirect
-	github.com/mattn/go-isatty v0.0.20 // indirect
-	github.com/mattn/go-runewidth v0.0.15 // indirect
+	github.com/mattn/go-isatty v0.0.17 // indirect
+	github.com/mattn/go-runewidth v0.0.9 // indirect
 	github.com/olekukonko/tablewriter v0.0.5 // indirect
-	github.com/rivo/uniseg v0.4.4 // indirect
-	gitlab.landui.cn/gomod/database v0.0.1 // indirect
 	go.opentelemetry.io/otel v1.14.0 // indirect
 	go.opentelemetry.io/otel/sdk v1.14.0 // indirect
 	go.opentelemetry.io/otel/trace v1.14.0 // indirect
