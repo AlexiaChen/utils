@@ -2,30 +2,10 @@ package utils
 
 import (
 	"fmt"
-	"math/big"
 	"math/rand"
 	"strconv"
 	"time"
-
-	"github.com/gogf/gf/v2/frame/g"
-	"github.com/gogf/gf/v2/os/gcfg"
-	"github.com/gogf/gf/v2/os/gctx"
 )
-
-func GetConfig(confPath string, key string) *g.Var {
-	var ctx = gctx.New()
-	adapter, err := gcfg.NewAdapterFile(confPath)
-	if err != nil {
-		panic(err)
-	}
-	config := gcfg.NewWithAdapter(adapter)
-	val, err := config.Get(ctx, key)
-	if err != nil {
-		fmt.Println(err.Error())
-		return nil
-	}
-	return val
-}
 
 // StringToFloat64 string转float64
 func StringToFloat64(str string) float64 {
@@ -78,9 +58,4 @@ func StringToUint(str string) uint {
 		panic(err)
 	}
 	return uint(i)
-}
-
-// FormatAmount 格式化金额字符串
-func FormatAmount(amount *big.Float) string {
-	return amount.Text('f', 2)
 }
